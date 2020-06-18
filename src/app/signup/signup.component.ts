@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: '.app-signup',
-  template: `<h2>Hello</h2>
-              <p>This is a Sign up page</p>`,
+  selector: 'app-signup',
+  templateUrl: './signup.component.html',
   styleUrls: ['./signup.component.css']
 })
 export class SignupComponent implements OnInit {
@@ -13,4 +12,5 @@ export class SignupComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  usertype = ['developer', 'owner']
 }
