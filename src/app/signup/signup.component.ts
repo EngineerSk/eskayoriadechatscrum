@@ -13,6 +13,6 @@ export class SignupComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  usertype = ['developer', 'owner']
+  userTypes = ['developer', 'owner']
   scrumUserModel = new Scrumuser('', 'johndoe@linuxjobber.com', '', '');
 }
