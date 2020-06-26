@@ -3,11 +3,7 @@ export class Scrumuser {
         public fullname : string, 
         public email: string, 
         public password: string, 
-        public type: string
-    ){
-        this.fullname =  fullname;
-        this.email = email;
-        this.password = password;
-        this.type = type; 
-    }
+        public type: string,
+        public projname: string
+    ){}
 }
