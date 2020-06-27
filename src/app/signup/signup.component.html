@@ -8,11 +8,11 @@
 		<div class="form_group">
 			<label>Email</label>
 			<input required type="email" 
-			pattern="^([a-z0-9\.-_]{1,80})@([a-z\d-]{1,80})\.([a-z]{2,8})(\.[a-z]{2,8})?$" 
+			pattern="^([a-z0-9\.-_]{1,80})@([a-z\d-]{1,80})\.com$" 
 			[class.is-invalid]="email.invalid && email.touched" #email="ngModel" name="email" 
 			class="form-control" [(ngModel)]="scrumUserModel.email">
 			<div *ngIf="email.errors && (email.touched || email.invalid)">
-				<small class="text-danger" *ngIf="email.errors.required">
+				<small class="text-danger" *ngIf="email.errors.required && email.touched">
 					Email is required
 				</small>
 				<small class="text-danger" *ngIf="email.errors.pattern">
@@ -26,7 +26,7 @@
 			[class.is-invalid]="fullname.invalid && fullname.touched" #fullname="ngModel" 
 			name="fullname" class="form-control" [(ngModel)]="scrumUserModel.fullname">
 			<div *ngIf="fullname.errors && (fullname.invalid || fullname.touched)">
-				<small class="text-danger">
+				<small class="text-danger"  *ngIf="fullname.errors.required && fullname.touched">
 					Fullname is required
 				</small>
 			</div>
@@ -34,11 +34,11 @@
 		<div class="form_group">
 			<label>Password</label>
 			<input required type="password" 
-			pattern="^(?=.*[0-9])(?=.*[\*\?\(\.\)\^\+\[\]\$\|\{\}]).{8,15}$"
+			pattern="^(?=.*[0-9])(?=.*[^(0-9)^(A-Z)^(a-z)^(\s)]).{8,15}$"
 			[class.is-invalid]="password.invalid && password.touched" #password="ngModel"
 			name="password" class="form-control" [(ngModel)]="scrumUserModel.password">
 			<div *ngIf="password.errors && (password.touched || password.invalid)">
-				<small class="text-danger" *ngIf="password.errors.required">
+				<small class="text-danger" *ngIf="password.errors.required && password.touched">
 					Password is required
 				</small>
 				<small class="text-danger" *ngIf="password.errors.pattern">
@@ -54,7 +54,7 @@
 				<option *ngFor = "let eachElement of userTypes">{{ eachElement }} </option>
 			</select>
 			<div *ngIf="usertype.errors && (usertype.invalid || usertype.touched)">
-				<small class="text-danger">
+				<small class="text-danger" *ngIf="usertype.errors.required && usertype.touched">
 					Usertype is required
 				</small>
 			</div>
