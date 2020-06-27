@@ -20,7 +20,7 @@
 		<div class="form_group">
 			<label>Password</label>
 			<input required type="password" 
-			pattern="^(?=.*[0-9])(?=.*[\*\?\(\.\)\^\+\[\]\$\|\\])[a-zA-Z0-9\*\?\(\.\)\^\+\[\]\$\|\\]{8,15}$"
+			pattern="^(?=.*[0-9])(?=.*[\*\?\(\.\)\^\+\[\]\$\|]).{8,15}$"
 			[class.is-invalid]="password.invalid && password.touched" 
 			#password="ngModel" 
 			name="password" class="form-control" ngModel>
@@ -29,7 +29,7 @@
 					Password is required
 				</small>
 				<small class="text-danger" *ngIf="password.errors.pattern">
-					Enter an 8-15 characters long password with one number and one special character (+, ?, $, *, or .) 
+					Enter an 8-15 characters long password with one number and one special character [, ], (, ), ^, +, |, $, *, or .
 				</small>
 			</div>
 		</div>
