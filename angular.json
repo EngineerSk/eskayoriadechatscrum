@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "eskayoriadechatscrum"
+    }
+  },
+  "defaultProject": "eskayoriadechatscrum",
+  "cli": {
+    "analytics": "ea5759e0-add2-44c1-add7-15da26224001"
+  }
 }
