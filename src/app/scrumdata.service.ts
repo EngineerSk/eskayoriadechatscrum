@@ -25,4 +25,7 @@ export class ScrumdataService {
     'password':user['password'], 'project':user['projname']}, 
     this.httpOptions)
   }
+  loggedIn():boolean {
+    return !!localStorage.getItem('token');
+  }
 }
